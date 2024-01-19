@@ -52,23 +52,10 @@
 
     <script>
         function submitForm() {
-        // var total_amount = document.getElementById("total_amount").value;
-        // var transaction_uuid = document.getElementById("transaction_uuid").value;
-        // var product_code = document.getElementById("product_code").value;
-    
-        // var input = total_amount + "," + transaction_uuid + "," + product_code;
-        // console.log(total_amount, transaction_uuid, product_code, input);
+      
 
         var secret = "8gBm/:&EnhH.1/q";
     
-        // var hash = CryptoJS.HmacSHA256(input, secret_key);
-        // var signature = CryptoJS.enc.Base64.stringify(hash);
-        // document.getElementById("signature").value = signature;
-
-        // var currentTime = new Date();
-        // var formattedTime = currentTime.toISOString().slice(2, 10).replace(/-/g, '') + '-' + currentTime.getHours() +
-        // currentTime.getMinutes() + currentTime.getSeconds();
-        // document.getElementById("transaction_uuid").value = formattedTime;
         var total_amount = document.getElementById("total_amount").value;
         var transaction_uuid = document.getElementById("transaction_uuid").value;
         var product_code = document.getElementById("product_code").value;

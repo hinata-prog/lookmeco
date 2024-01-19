@@ -21,6 +21,8 @@ return [
     'khalti_public_key'=> env('KHALTI_PUBLIC_KEY'),
     'esewa_merchant_code'=> env('ESEWA_MERCHANT_CODE'),
     'esewa_secret_key'=> env('ESEWA_SECRET_KEY'),
+    'sms_token'=> env('SMS_TOKEN'),
+
 
 
     /*

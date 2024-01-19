@@ -53,7 +53,7 @@ class AuthController extends Controller
                     $client = new Client();
                     $response = $client->post('https://sms.aakashsms.com/sms/v3/send', [
                         'form_params' => [
-                            'auth_token' => 'c1eecbd817abc78626ee119a530b838ef57f8dad9872d092ab128776a00ed31d',
+                            'auth_token' => config('app.sms_token'),
                             'to' => $user->phone_number,
                             'text' => "You have successfully registered in Look Me Cosmetics. Your password is: $password"
                         ],
@@ -429,7 +429,7 @@ class AuthController extends Controller
                 $client = new Client();
                 $response = $client->post('https://sms.aakashsms.com/sms/v3/send', [
                     'form_params' => [
-                        'auth_token' => 'c1eecbd817abc78626ee119a530b838ef57f8dad9872d092ab128776a00ed31d',
+                        'auth_token' => config('app.sms_token'),
                         'to' => $phone_number,
                         'text' => "Your verification code is: $code",
                     ],

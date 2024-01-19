@@ -46,10 +46,6 @@ class PaymentController extends Controller
             $orderValue->payment_status = 'paid';
             $orderValue->save();
 
-
-            //send confirmation sms
-            orderSMS($request->id);
-
             Cart::destroy();
 
             //Update Product Stock
@@ -63,6 +59,8 @@ class PaymentController extends Controller
                 }
             }
 
+            //send confirmation sms
+            orderSMS($orderValue->id);
             $message = "You have successfully placed your order.";
             session()->flash("success", $message);
 
@@ -117,8 +115,6 @@ class PaymentController extends Controller
             $orderValue->save();
 
 
-            //send confirmation sms
-            orderSMS($request->id);
 
             Cart::destroy();
 
@@ -132,6 +128,9 @@ class PaymentController extends Controller
                     $productData->save();
                 }
             }
+
+            //send confirmation sms
+            orderSMS($orderValue->id);
 
             $message = "You have successfully placed your order.";
             return redirect()->route('front.thankyou',$order->id)->with("success", $message);

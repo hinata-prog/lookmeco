@@ -37,7 +37,7 @@ function orderSMS($orderId){
             $client = new Client();
             $response = $client->post('https://sms.aakashsms.com/sms/v3/send', [
                 'form_params' => [
-                    'auth_token' => 'c1eecbd817abc78626ee119a530b838ef57f8dad9872d092ab128776a00ed31d',
+                    'auth_token' => config('app.sms_token'),
                     'to' => $order->mobile,
                     'text' => "You have successfully placed your order::: $invoiceLink",
                 ],
